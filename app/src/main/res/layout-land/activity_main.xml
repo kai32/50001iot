@@ -1,0 +1,274 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="Waiting for value..."
+        android:layout_alignTop="@+id/textView_distance_string"
+        android:layout_toRightOf="@+id/textView_position_string"
+        android:layout_toEndOf="@+id/textView_position_string" />
+
+    <TextView
+        android:id="@+id/textView_distance_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="@string/pressure"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/toggleButtonLED"
+        android:layout_alignStart="@+id/toggleButtonLED" />
+
+    <TextView
+        android:id="@+id/textView_pulse_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="@string/pulse"
+        android:layout_below="@+id/textView_distance"
+        android:layout_alignLeft="@+id/textView_distance_string"
+        android:layout_alignStart="@+id/textView_distance_string" />
+
+    <TextView
+        android:id="@+id/textView_pulse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="Waiting for value..."
+        android:layout_alignTop="@+id/textView_pulse_string"
+        android:layout_alignLeft="@+id/textView_distance"
+        android:layout_alignStart="@+id/textView_distance" />
+
+    <TextView
+        android:id="@+id/textView_position_string"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="@string/position"
+        android:layout_below="@+id/textView_pulse_string"
+        android:layout_alignLeft="@+id/textView_pulse_string"
+        android:layout_alignStart="@+id/textView_pulse_string" />
+
+    <TextView
+        android:id="@+id/textView_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="35sp"
+        android:text="Waiting for value..."
+        android:layout_below="@+id/textView_pulse"
+        android:layout_toRightOf="@+id/textView_position_string"
+        android:layout_toEndOf="@+id/textView_position_string" />
+
+    <Button
+        android:id="@+id/butt"
+        android:text="train"
+        android:onClick="onClickTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_position"/>
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:id="@+id/blank"
+        android:text=""/>
+
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:layout_toRightOf="@id/blank"
+        android:id="@+id/col0"
+        android:text="0"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:layout_toRightOf="@id/col0"
+        android:id="@+id/col1"
+        android:text="1"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:layout_toRightOf="@id/col1"
+        android:id="@+id/col2"
+        android:text="2"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/blank"
+        android:id="@+id/row0"
+        android:text="0"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row0"
+        android:id="@+id/row1"
+        android:text="1"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row1"
+        android:id="@+id/row2"
+        android:text="2"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/col0"
+        android:layout_toRightOf="@id/row0"
+        android:id="@+id/e00"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row0"
+        android:layout_toRightOf="@id/row1"
+        android:id="@+id/e10"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row1"
+        android:layout_toRightOf="@id/row2"
+        android:id="@+id/e20"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/col0"
+        android:layout_toRightOf="@id/col0"
+        android:id="@+id/e01"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row0"
+        android:layout_toRightOf="@id/col0"
+        android:id="@+id/e11"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row1"
+        android:layout_toRightOf="@id/col0"
+        android:id="@+id/e21"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/col0"
+        android:layout_toRightOf="@id/col1"
+        android:id="@+id/e02"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row0"
+        android:layout_toRightOf="@id/col1"
+        android:id="@+id/e12"
+        android:text="-"/>
+    <TextView
+        android:layout_width="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row1"
+        android:layout_toRightOf="@id/col1"
+        android:id="@+id/e22"
+        android:text="-"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row2"
+        android:id="@+id/accuracy"
+        android:text="Calculating"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/col2"
+        android:layout_below="@id/butt"
+        android:id="@+id/SL"
+        android:text="Sepal Length: "/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:inputType="numberDecimal"
+        android:layout_toRightOf="@id/SL"
+        android:id="@+id/SLE"
+        />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/col2"
+        android:layout_below="@id/SLE"
+        android:id="@+id/SW"
+        android:text="Sepal Width: "/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SLE"
+        android:layout_toRightOf="@id/SL"
+        android:id="@+id/SWE"
+        android:inputType="numberDecimal"
+        />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/col2"
+        android:layout_below="@id/SWE"
+        android:id="@+id/PL"
+        android:text="Petal Length: "/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/SWE"
+        android:layout_toRightOf="@id/SL"
+        android:inputType="numberDecimal"
+        android:id="@+id/PLE"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/col2"
+        android:layout_below="@id/PLE"
+        android:id="@+id/PW"
+        android:text="Petal Width: "/>
+    <EditText
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PLE"
+        android:layout_toRightOf="@id/SL"
+        android:inputType="numberDecimal"
+        android:id="@+id/PWE"
+        />
+    <Button
+        android:id="@+id/butt1"
+        android:text="Classify"
+        android:onClick="onClickClassify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_position"
+        android:layout_toRightOf="@+id/butt"
+        />
+    <TextView
+        android:id="@+id/pred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/butt"
+        android:layout_toRightOf="@id/SLE"
+
+    />
+
+</RelativeLayout>
